@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TwoComponent implements OnInit {
 
-  @Input()
+  @Input('input')
   name !: string;
 
   constructor() { }

@@ -1,0 +1,37 @@
+<button (click)="onlyOdd=!onlyOdd">show only odd numbers</button>
+
+<div *ngIf="onlyOdd">
+<ul class="list-group">
+  <li class="list-group-item"
+  *ngFor="let number of odd"
+  [ngClass]="{odd: number%2!=0}">{{number}}</li>
+</ul>
+</div>
+<div *ngIf="!onlyOdd">
+  <ul class="list-group">
+    <li class="list-group-item"
+    *ngFor="let number of even"
+    [ngStyle]="{backgroundColor:number%2==0?'pink':'black'}">{{number}}</li>
+
+
+
+</ul>
+</div>
+
+<!-- <div *appUnless="onlyOdd"> -->
+  <!-- <ul class="list-group">
+    <li class="list-group-item"
+    *ngFor="let number of even"
+    [ngStyle]="{backgroundColor:number%2==0?'pink':'black'}">{{number}}</li>
+
+
+
+</ul>
+</div> -->
+
+
+
+
+
+<p appBasicHighlight>Customn Attribute Directive</p>
+<p appBetterHighlight defaultColor="pink">Customn Attribute Directive</p>

@@ -2,13 +2,27 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { ChatScreenComponent } from './chat-screen/chat-screen.component';
+import { ChatComponent } from './chat/chat.component';
+import { TextboxComponent } from './textbox/textbox.component';
+import { SendButtonComponent } from './send-button/send-button.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatScreenComponent,
+    ChatComponent,
+    TextboxComponent,
+
+ 
+   
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

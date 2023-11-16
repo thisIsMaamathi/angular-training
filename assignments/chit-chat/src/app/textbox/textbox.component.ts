@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Message } from '../common/message.interface';
 
 @Component({
@@ -9,7 +9,12 @@ import { Message } from '../common/message.interface';
 export class TextboxComponent {
 chatPayload:string='';
 
-chat:Message={message:" ", modifiedDate:new Date(), isSentMessage:true};
+
+chat:Message|undefined;
+@Input()
+position:string="left";
+
+
 
 
 @Output()
@@ -18,7 +23,12 @@ sendChat=new EventEmitter<Message>();
 
 
 onClick(){
-this.chat.message=this.chatPayload;
+  const messageObj={
+    message: this.chatPayload,
+    modifiedDate: new Date(),
+    position: this.position
+  }
+this.chat=messageObj;
 console.log("onclick works !")
 this.sendChat.emit(this.chat);
 

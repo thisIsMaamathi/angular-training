@@ -16,12 +16,11 @@ export class ChatScreenComponent {
   sendToOtherComponent=new EventEmitter<Message>;
 
  @Input()
- recievedChat:Message={message:" ", modifiedDate:new Date(), isSentMessage:false};
-
+ recievedChat:Message|undefined;
  //display, own chat that was sent
  displaySendersChat(event:Message){
   const currentChat: Message=
-  {message:event.message, modifiedDate:new Date(), isSentMessage:true};
+  {message:event.message, modifiedDate:new Date(), position:true};
   // const recievedMsg:Message=
   // {message:this.recievedChat.message, modifiedDate:new Date(), isSentMessage:false};
 

@@ -1,14 +1,14 @@
 <div class="mobile-layout">
 <div class="title-bar">SomuKumar Ekambaram</div>
 <div class="chat-container">
-<ul class="chat-list" *ngFor="let cht of chatMessages" >
-    <app-chat [chat]="cht">Loading chat...</app-chat>
+<ul class="chat-list" *ngFor ="let cht of chatMessages" >
+    <app-chat [chat]="cht" [chatScreenName]="name">Loading chat...</app-chat>
 </ul>
 
 </div>
 
 <div class="textbox-wrapper">
-<app-textbox (sendChat)="displaySendersChat($event)">
+<app-textbox (sendMessage)="getSentMessage($event)">
 
 </app-textbox>
 </div>

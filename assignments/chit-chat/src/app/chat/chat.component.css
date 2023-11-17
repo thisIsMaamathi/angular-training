@@ -1,0 +1,28 @@
+.reciever{
+    background-color: rebeccapurple;
+    color: white;
+    align-self: flex-start;
+
+  
+}
+
+.sender{
+    background-color:grey;
+    color: black;
+    align-self: flex-end;
+}
+
+.chat-bubble{
+
+    margin:10px;
+    padding:10px;
+    border-radius: 15px;
+    width: 241px;
+
+}
+
+.chat-container{
+    display:flex;
+}
+
+

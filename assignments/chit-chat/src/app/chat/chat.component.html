@@ -1,1 +1,5 @@
-<p>{{chat.message}}</p>
+<div class="chat-container">
+<div class="chat-bubble" [ngClass]="{'sender':chat.sender===chatScreenName ,'reciever':chat.sender !== chatScreenName}">
+    {{chat.message}} 
+</div>
+</div>

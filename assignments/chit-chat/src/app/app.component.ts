@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Message } from './common/message.interface';
 
 @Component({
@@ -7,14 +7,27 @@ import { Message } from './common/message.interface';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'chit-chat';
-  appChat:Message={message:" ", modifiedDate:new Date(), isSentMessage:false};
-   
-  recievedFromComponent(event:Message){
-    this.appChat=event;
-    console.log("Message recieved by appComponent "+this.appChat.message)
   
+  bobMessages: Message[]=[];
+
+  aliseMessages: Message[]=[];
+
+  @Output()
+  sendToRespectiveComponent=new EventEmitter<Message[]>
+
+  recievedChat!:Message;
+
+  getFromOtherComponent(event:Message){
+  this.recievedChat=event;
+  if(this.recievedChat.sender=="bob"){
+    this.bobMessages.push(this.recievedChat);
+    this.sendToRespectiveComponent.emit(this.bobMessages)
+     //console.log("sending to alise   "+JSON.stringify(this.bobMessages))
+  }
+  else{
+    this.aliseMessages.push(this.recievedChat)
+    this.sendToRespectiveComponent.emit(this.aliseMessages);
   }
 
-
+  }
 }

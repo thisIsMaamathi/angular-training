@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Message } from '../common/message.interface';
 import { OutletContext } from '@angular/router';
-import { JsonPipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-chat-screen',
@@ -9,33 +9,29 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./chat-screen.component.css']
 })
 export class ChatScreenComponent {
- chatMessages:Message[]=[];
-//  recievedChats:Message[]=[];
+
+  @Input()chatMessages: Message[] = [];
+
+  //recievedChat:Message[]=[];
+
+  @Input() name: string = '';
+  @Output()sendToOtherComponent=new EventEmitter<Message>;
  
- @Output()
-  sendToOtherComponent=new EventEmitter<Message>;
 
- @Input()
- recievedChat:Message|undefined;
- //display, own chat that was sent
- displaySendersChat(event:Message){
-  const currentChat: Message=
-  {message:event.message, modifiedDate:new Date(), position:true};
-  // const recievedMsg:Message=
-  // {message:this.recievedChat.message, modifiedDate:new Date(), isSentMessage:false};
 
-  this.chatMessages.push(currentChat);
-  
-  this.sendToOtherComponent.emit(currentChat);
-  this.chatMessages.push(this.recievedChat);
- 
-  // console.log("recieved chat  :  "+currentChat);
-  console.log("Messge : "+currentChat.message);
-  console.log("chatMessages "+JSON.stringify(this.chatMessages));
-  console.log("Message recievd from appcomponent "+ JSON.stringify(this.recievedChat));
- }
 
- //display recieved chat
+  getSentMessage(event: Message) {
+    const currentChat: Message = { message: event.message, modifiedDate: event.modifiedDate, sender: this.name  };
+
+    this.chatMessages.push(currentChat);
+    
+    this.sendToOtherComponent.emit(currentChat);
+    console.log(JSON.stringify(this.chatMessages));
+  }
+
+
+
+
 
 
 }

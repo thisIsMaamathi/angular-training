@@ -7,9 +7,13 @@ import { Message } from '../common/message.interface';
   styleUrls: ['./chat.component.css']
 })
 export class ChatComponent {
-@Input('chat')
-chat:Message={message:" ", modifiedDate:new Date(), isSentMessage:true};
 
+  @Input()
+  chat!:Message;
 
+  @Input()
+  chatScreenName:string='';
+
+  
 
 }

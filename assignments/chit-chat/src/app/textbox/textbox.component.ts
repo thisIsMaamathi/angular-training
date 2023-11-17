@@ -7,31 +7,27 @@ import { Message } from '../common/message.interface';
   styleUrls: ['./textbox.component.css']
 })
 export class TextboxComponent {
-chatPayload:string='';
+
+  chatPayload:string='';
+  chat!:Message;
 
 
-chat:Message|undefined;
-@Input()
-position:string="left";
+  @Output()
+  sendMessage=new EventEmitter<Message>;
 
-
-
-
-@Output()
-sendChat=new EventEmitter<Message>();
-
-
-
-onClick(){
-  const messageObj={
-    message: this.chatPayload,
-    modifiedDate: new Date(),
-    position: this.position
+  onClick(){
+    const messageObj={
+      message: this.chatPayload,
+      modifiedDate: new Date(),
+      sender:''
+     
+    
+    }
+  this.chat=messageObj;
+   this.sendMessage.emit(this.chat);
+   
+  //  console.log(JSON.stringify(this.chat));
   }
-this.chat=messageObj;
-console.log("onclick works !")
-this.sendChat.emit(this.chat);
 
-}
 
 }

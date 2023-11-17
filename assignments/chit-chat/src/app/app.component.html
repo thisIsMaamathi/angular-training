@@ -17,10 +17,11 @@
 
 <div class="main-container">
     <div class="bob" [ngStyle]="{'background-color':'wheat'}">
-        <app-chat-screen (sendToOtherComponent)="recievedFromComponent($event)">Fetching data....</app-chat-screen>
+        <app-chat-screen [name]="'bob'" (sendToOtherComponent)="getFromOtherComponent($event)" [chatMessages]="aliseMessages" >Fetching data....</app-chat-screen>
     </div>
     <div class="alise" [ngStyle]="{'background-color':'pink'}">
-        <app-chat-screen [recievedChat]="appChat"></app-chat-screen>
+        <app-chat-screen [name]="'alise'" [chatMessages]="bobMessages" (sendToOtherComponent)="getFromOtherComponent($event)"></app-chat-screen>
     </div>
+
 
 </div>

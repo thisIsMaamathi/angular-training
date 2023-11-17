@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { ChatComponent } from './chat/chat.component';
 import { TextboxComponent } from './textbox/textbox.component';
-import { SendButtonComponent } from './send-button/send-button.component';
 import { FormsModule } from '@angular/forms';
 
 

@@ -1,15 +1,16 @@
-.reciever{
-    background-color: rebeccapurple;
+.sender{
+    
     color: white;
     align-self: flex-start;
 
   
 }
 
-.sender{
-    background-color:grey;
+.reciever{
+    background-color:#f2f2f2;
     color: black;
     align-self: flex-end;
+    font-size: 14px;
 }
 
 .chat-bubble{

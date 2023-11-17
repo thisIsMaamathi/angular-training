@@ -16,8 +16,10 @@ table {
 
 .bob{
     width: 50%;
-   color:blueviolet;
+    color:blueviolet;
     display:flex;
+    row-gap: 50px;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -28,6 +30,12 @@ table {
     display:flex;
     align-items: center;
     justify-content: center;
+}
+.color-palette{
+    
+    background-color: blueviolet;
+    display: flex;
+   
 }
 
 

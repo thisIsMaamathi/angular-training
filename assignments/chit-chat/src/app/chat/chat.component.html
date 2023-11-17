@@ -1,5 +1,6 @@
 <div class="chat-container">
-<div class="chat-bubble" [ngClass]="{'sender':chat.sender===chatScreenName ,'reciever':chat.sender !== chatScreenName}">
+<div class="chat-bubble" [ngClass]="{'sender':chat.sender===chatScreenName ,'reciever':chat.sender !== chatScreenName}"
+(changeBackgroundColor)="changeChatBubbleColor($event)">
     {{chat.message}} 
 </div>
 </div>

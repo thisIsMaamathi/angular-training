@@ -6,6 +6,7 @@ import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { ChatComponent } from './chat/chat.component';
 import { TextboxComponent } from './textbox/textbox.component';
 import { FormsModule } from '@angular/forms';
+import { ColorButtonComponent } from './color-button/color-button.component';
 
 
 
@@ -15,6 +16,7 @@ import { FormsModule } from '@angular/forms';
     ChatScreenComponent,
     ChatComponent,
     TextboxComponent,
+    ColorButtonComponent,
 
  
    

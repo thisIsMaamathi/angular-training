@@ -12,8 +12,13 @@ export class AppComponent {
 
   aliseMessages: Message[]=[];
 
+  backgroundColor:string='';
+
   @Output()
   sendToRespectiveComponent=new EventEmitter<Message[]>
+
+  @Output()
+  emitChatBubbleColor=new EventEmitter<string>;
 
   recievedChat!:Message;
 
@@ -29,5 +34,11 @@ export class AppComponent {
     this.sendToRespectiveComponent.emit(this.aliseMessages);
   }
 
+  }
+
+  changeBackgroundColor(color:string){
+    console.log(color);
+   this.backgroundColor=color;
+   this.emitChatBubbleColor.emit(color);
   }
 }

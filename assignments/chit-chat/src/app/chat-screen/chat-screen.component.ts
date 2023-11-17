@@ -12,13 +12,8 @@ export class ChatScreenComponent {
 
   @Input()chatMessages: Message[] = [];
 
-  //recievedChat:Message[]=[];
-
   @Input() name: string = '';
   @Output()sendToOtherComponent=new EventEmitter<Message>;
- 
-
-
 
   getSentMessage(event: Message) {
     const currentChat: Message = { message: event.message, modifiedDate: event.modifiedDate, sender: this.name  };
@@ -29,7 +24,7 @@ export class ChatScreenComponent {
     console.log(JSON.stringify(this.chatMessages));
   }
 
-
+  
 
 
 

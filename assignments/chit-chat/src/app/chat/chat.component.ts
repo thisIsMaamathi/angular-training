@@ -14,6 +14,16 @@ export class ChatComponent {
   @Input()
   chatScreenName:string='';
 
-  
+  @Input() chatBubbleColor:string='';
+
+  isSender(): boolean {
+    console.log(this.chatBubbleColor)
+    return this.chatScreenName === this.chat.sender;
+  }
+
+  changeChatBubbleColor(event:string){
+    console.log(event);
+   this.chatBubbleColor=event;
+  }
 
 }

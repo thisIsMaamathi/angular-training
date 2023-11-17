@@ -16,8 +16,14 @@
 
 
 <div class="main-container">
-    <div class="bob" [ngStyle]="{'background-color':'wheat'}">
+    <div class="bob" [style.backgroundColor]="backgroundColor">
         <app-chat-screen [name]="'bob'" (sendToOtherComponent)="getFromOtherComponent($event)" [chatMessages]="aliseMessages" >Fetching data....</app-chat-screen>
+        <div class="color-palette">
+           <app-color-button color="#ffffff" (colorClicked)="changeBackgroundColor($event)"></app-color-button>
+        
+           <app-color-button color="#dbe2c3" (colorClicked)="changeBackgroundColor($event)"></app-color-button>
+        </div>
+
     </div>
     <div class="alise" [ngStyle]="{'background-color':'pink'}">
         <app-chat-screen [name]="'alise'" [chatMessages]="bobMessages" (sendToOtherComponent)="getFromOtherComponent($event)"></app-chat-screen>
